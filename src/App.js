@@ -1,25 +1,48 @@
-import logo from './logo.svg';
 import './App.css';
+import DrinkCard from './DrinkCard';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
+import { Switch, Route, withRouter } from 'react-router';
+import { getUrlFriendlyString } from './utils';
+import { isMobile } from 'react-device-detect';
+import ComeBackOnMobile from './ComeBackOnMobile';
+import drinkData from './data';
 
-function App() {
+const App = ({ location }) => {
+  if (!isMobile) return <ComeBackOnMobile />;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <TransitionGroup>
+      <CSSTransition key={location.key} classNames="slide-up" timeout={1500}>
+        <Switch location={location}>
+          {drinkData.map((drink, index) => {
+            const DrinkCardWrapper = () => (
+              <div className="drink-container">
+                <DrinkCard
+                  drink={drink}
+                  neighbourDrinksNames={{
+                    previous: drinkData[index - 1]
+                      ? drinkData[index - 1].name
+                      : drinkData[drinkData.length - 1].name,
+                    next: drinkData[index + 1]
+                      ? drinkData[index + 1].name
+                      : drinkData[0].name
+                  }}
+                />
+              </div>
+            );
 
-export default App;
+            return (
+              <Route
+                key={drink.name}
+                path={`/${getUrlFriendlyString(drink.name)}`}
+                component={DrinkCardWrapper}
+              />
+            );
+          })}
+        </Switch>
+      </CSSTransition>
+    </TransitionGroup>
+  );
+};
+
+export default withRouter(App);
