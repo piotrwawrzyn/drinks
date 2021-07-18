@@ -6,13 +6,20 @@ import { getUrlFriendlyString } from './utils';
 import { isMobile } from 'react-device-detect';
 import ComeBackOnMobile from './ComeBackOnMobile';
 import drinkData from './data';
+import { withOrientationChange } from 'react-device-detect';
 
-const App = ({ location }) => {
+const App = ({ location, isLandscape }) => {
+  if (isLandscape) return <div>Landscape mode is not currently supported</div>;
   if (!isMobile) return <ComeBackOnMobile />;
 
   return (
-    <TransitionGroup>
-      <CSSTransition key={location.key} classNames="slide-up" timeout={1500}>
+    <TransitionGroup unmountOnExit>
+      <CSSTransition
+        key={location.key}
+        classNames="slide-up"
+        timeout={1500}
+        unmountOnExit
+      >
         <Switch location={location}>
           {drinkData.map((drink, index) => {
             const DrinkCardWrapper = () => (
@@ -45,4 +52,4 @@ const App = ({ location }) => {
   );
 };
 
-export default withRouter(App);
+export default withRouter(withOrientationChange(App));

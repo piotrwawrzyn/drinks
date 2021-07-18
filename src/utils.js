@@ -44,3 +44,35 @@ export const adjustFontSizeToContainer = (
     element.style.fontSize = currentFontSize - 1 + 'px';
   }
 };
+
+export const decreaseElementsSizeIfNoSpaceToFitOnCard = () => {
+  // const drinkCard = document.querySelector('.drink__card');
+  // const drinkCardHeight = drinkCard.offsetHeight;
+  // const bottomOffset = 0.1 * drinkCardHeight;
+  // const drinkCardRect = drinkCard.getBoundingClientRect();
+  // let removeCardHeightFromPosition;
+  // if (drinkCardRect.top > 0) removeCardHeightFromPosition = true;
+  // const drinkCardRatingSection = document.querySelector(
+  //   '.drink__card--ratings-section'
+  // );
+  // console.log(document.querySelectorAll('.drink__card--ratings-section'));
+  // const drinkCardRatingSectionRect =
+  //   drinkCardRatingSection.getBoundingClientRect();
+  // let drinkCardRatingSectionPosition = removeCardHeightFromPosition
+  //   ? drinkCardRatingSectionRect.y -
+  //     drinkCardHeight -
+  //     drinkCardRatingSectionRect.height
+  //   : drinkCardRatingSectionRect.y - drinkCardRatingSectionRect.height;
+  // console.log(drinkCardRatingSectionPosition);
+  // console.log(drinkCardHeight, bottomOffset);
+  // while (drinkCardRatingSectionPosition + bottomOffset > drinkCardHeight) {
+  //   console.log(drinkCardRatingSectionPosition);
+  //   document.querySelector('.drink__card--image').style.width =
+  //     document.querySelector('.drink__card--image').offsetWidth - 1;
+  //   drinkCardRatingSectionPosition = removeCardHeightFromPosition
+  //     ? drinkCardRatingSectionRect.y -
+  //       drinkCardHeight -
+  //       drinkCardRatingSectionRect.height
+  //     : drinkCardRatingSectionRect.y - drinkCardRatingSectionRect.height;
+  // }
+};

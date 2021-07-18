@@ -1,7 +1,11 @@
 import './DrinkCard.css';
 import { useSwipeable } from 'react-swipeable';
 import { useHistory } from 'react-router-dom';
-import { adjustFontSizeToContainer, swipeToAnotherDrink } from './utils';
+import {
+  adjustFontSizeToContainer,
+  decreaseElementsSizeIfNoSpaceToFitOnCard,
+  swipeToAnotherDrink
+} from './utils';
 import { useEffect } from 'react';
 
 const DrinkCard = ({ drink, neighbourDrinksNames }) => {
@@ -36,8 +40,9 @@ const DrinkCard = ({ drink, neighbourDrinksNames }) => {
       const title = document.querySelector('.drink__card--top-section h2');
 
       adjustFontSizeToContainer(title, card, 0.9);
+      decreaseElementsSizeIfNoSpaceToFitOnCard();
     })();
-  }, []);
+  });
 
   return (
     <div className="drink__card" {...handlers}>
