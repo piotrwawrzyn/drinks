@@ -128,11 +128,16 @@
   0% {
     transform: translateY(0);
   }
-  10% {
-    transform: translateY(-8px);
+
+  50% {
+    transform: translateY(0);
   }
 
-  16% {
+  60% {
+    transform: translateY(-12px);
+  }
+
+  68% {
     transform: translateY(0);
   }
 }

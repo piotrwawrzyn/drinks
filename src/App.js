@@ -7,6 +7,7 @@ import { isMobile } from 'react-device-detect';
 import ComeBackOnMobile from './ComeBackOnMobile';
 import drinkData from './data';
 import { withOrientationChange } from 'react-device-detect';
+import HomeCard from './HomeCard';
 
 const App = ({ location, isLandscape }) => {
   if (isLandscape) return <div>Landscape mode is not currently supported</div>;
@@ -21,10 +22,14 @@ const App = ({ location, isLandscape }) => {
         unmountOnExit
       >
         <Switch location={location}>
-          {drinkData.map((drink, index) => {
-            const DrinkCardWrapper = () => (
-              <div className="drink-container">
+          <Route key="home" path={`/`} exact component={HomeCard} />
+          {drinkData.map((drink, index) => (
+            <Route
+              key={drink.name}
+              path={`/${getUrlFriendlyString(drink.name)}`}
+              render={props => (
                 <DrinkCard
+                  {...props}
                   drink={drink}
                   neighbourDrinksNames={{
                     previous: drinkData[index - 1]
@@ -34,18 +39,10 @@ const App = ({ location, isLandscape }) => {
                       ? drinkData[index + 1].name
                       : drinkData[0].name
                   }}
-                />
-              </div>
-            );
-
-            return (
-              <Route
-                key={drink.name}
-                path={`/${getUrlFriendlyString(drink.name)}`}
-                component={DrinkCardWrapper}
-              />
-            );
-          })}
+                ></DrinkCard>
+              )}
+            />
+          ))}
         </Switch>
       </CSSTransition>
     </TransitionGroup>
