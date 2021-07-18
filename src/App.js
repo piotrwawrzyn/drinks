@@ -11,16 +11,48 @@ import HomeCard from './HomeCard';
 import Menu from './Menu';
 import List from './List';
 
+const routesWithoutAnimation = ['/drinks-list'];
+
 const App = ({ location, isLandscape }) => {
   if (isLandscape) return <div>Landscape mode is not currently supported</div>;
   if (!isMobile) return <ComeBackOnMobile />;
 
+  /* This is a nasty fix to exclude some routes from the animation */
+  let CSSTransitionKey;
+  let inProp = true;
+  if (location.state && routesWithoutAnimation.includes(location.pathname)) {
+    CSSTransitionKey = location.state.previousLocation.key;
+    inProp = false;
+  } else {
+    CSSTransitionKey = location.key;
+  }
+
   return (
     <div id="container">
-      <Menu pageWrapId={'container'} outerContainerId={'container'} />
-      <TransitionGroup>
-        <CSSTransition key={location.key} classNames="slide-up" timeout={1500}>
+      <Menu
+        location={location}
+        pageWrapId={'container'}
+        outerContainerId={'container'}
+      />
+      <TransitionGroup exit={inProp} enter={inProp} appear={inProp}>
+        <CSSTransition
+          key={CSSTransitionKey}
+          classNames={'slide-up'}
+          timeout={1500}
+          in={inProp}
+        >
           <Switch location={location}>
+            <Route
+              key="drinks-list"
+              path="/drinks-list"
+              render={props => (
+                <List
+                  {...props}
+                  elements={drinkData}
+                  title="DRINKS I CAN MIX"
+                />
+              )}
+            />
             <Route
               exact
               key="home"
@@ -50,15 +82,6 @@ const App = ({ location, isLandscape }) => {
           </Switch>
         </CSSTransition>
       </TransitionGroup>
-      <Switch>
-        <Route
-          key="drinks-list"
-          path="/drinks-list"
-          render={props => (
-            <List {...props} elements={drinkData} title="DRINKS I CAN MIX" />
-          )}
-        />
-      </Switch>
     </div>
   );
 };

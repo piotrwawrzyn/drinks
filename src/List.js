@@ -5,7 +5,7 @@ import { changeMenuButtonColor } from './utils';
 const List = ({ elements, title }) => {
   useEffect(() => {
     changeMenuButtonColor('black');
-  });
+  }, []);
 
   return (
     <div className="list-container">

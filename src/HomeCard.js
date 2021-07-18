@@ -9,7 +9,7 @@ const HomeCard = ({ drinks }) => {
 
   useEffect(() => {
     changeMenuButtonColor('white');
-  });
+  }, []);
 
   const handlers = useSwipeable({
     onSwipedUp: _ => {

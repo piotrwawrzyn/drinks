@@ -42,7 +42,7 @@ const DrinkCard = ({ drink, neighbourDrinksNames }) => {
       adjustFontSizeToContainer(title, card, 0.9);
       changeMenuButtonColor('white');
     })();
-  });
+  }, []);
 
   return (
     <div className="drink__card" {...handlers}>
