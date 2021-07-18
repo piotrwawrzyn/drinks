@@ -50,6 +50,9 @@
 .drink__card--ingredients-section--other h3,
 .drink__card--ingredients-section--alcohols h3 {
   padding: 5px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 .drink__card--ingredients-section--alcohols h3 {
@@ -173,6 +176,6 @@
 
 .drink__card--funfact-section .separator {
   width: 8vw;
-  height: 1px;
+  height: 0.1vh;
   background: #282828;
 }

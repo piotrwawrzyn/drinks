@@ -1,9 +1,9 @@
-import './DrinkCard.css';
+import './styles/DrinkCard.css';
 import { useSwipeable } from 'react-swipeable';
 import { useHistory } from 'react-router-dom';
 import {
   adjustFontSizeToContainer,
-  decreaseElementsSizeIfNoSpaceToFitOnCard,
+  changeMenuButtonColor,
   swipeToAnotherDrink
 } from './utils';
 import { useEffect } from 'react';
@@ -18,7 +18,6 @@ const DrinkCard = ({ drink, neighbourDrinksNames }) => {
     strength,
     funfact
   } = drink;
-
   const history = useHistory();
 
   const handlers = useSwipeable({
@@ -41,7 +40,7 @@ const DrinkCard = ({ drink, neighbourDrinksNames }) => {
       const title = document.querySelector('.drink__card--top-section h2');
 
       adjustFontSizeToContainer(title, card, 0.9);
-      decreaseElementsSizeIfNoSpaceToFitOnCard();
+      changeMenuButtonColor('white');
     })();
   });
 
@@ -83,16 +82,16 @@ const DrinkCard = ({ drink, neighbourDrinksNames }) => {
       )}
 
       <div className="drink__card--ratings-section">
-        <p>
+        <div>
           Strength{' '}
           <div className="drink__card--ratings-section--rate">{strength}</div>
           <div className="drink__card--ratings-section--max">/10</div>
-        </p>
-        <p>
+        </div>
+        <div>
           My Rating{' '}
           <div className="drink__card--ratings-section--rate">{rating}</div>
           <div className="drink__card--ratings-section--max">/10</div>
-        </p>
+        </div>
       </div>
 
       <div className="drink__card--next-drink animated bounce">

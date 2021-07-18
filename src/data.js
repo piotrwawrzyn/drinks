@@ -32,7 +32,35 @@ const drinkData = [
       other: ['Cranberry juice', 'Orange juice']
     },
     rating: 8,
-    strength: 7
+    strength: 7,
+    funfact:
+      'Name of this cocktail comes from two things people love to do in Florida'
+  },
+  {
+    name: 'Long Island Iced Tea',
+    image: './images/drinks/old_fashioned.jpg',
+    backgroundImage: './images/backgrounds/beach_with_palm_trees.jpg',
+    ingredients: {
+      alcoholic: ['Vodka', 'Peach liqueur'],
+      other: ['Cranberry juice', 'Orange juice']
+    },
+    rating: 8,
+    strength: 7,
+    funfact:
+      'Name of this cocktail comes from two things people love to do in Florida'
+  },
+  {
+    name: 'Mojito',
+    image: './images/drinks/old_fashioned.jpg',
+    backgroundImage: './images/backgrounds/beach_with_palm_trees.jpg',
+    ingredients: {
+      alcoholic: ['Vodka', 'Peach liqueur'],
+      other: ['Cranberry juice', 'Orange juice']
+    },
+    rating: 8,
+    strength: 7,
+    funfact:
+      'Name of this cocktail comes from two things people love to do in Florida'
   }
 ];
 

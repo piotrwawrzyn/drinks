@@ -1,10 +1,15 @@
+import { useEffect } from 'react';
 import { useHistory } from 'react-router';
 import { useSwipeable } from 'react-swipeable';
-import './HomeCard.css';
-import { swipeToAnotherDrink } from './utils';
+import './styles/HomeCard.css';
+import { changeMenuButtonColor, swipeToAnotherDrink } from './utils';
 
 const HomeCard = ({ drinks }) => {
   const history = useHistory();
+
+  useEffect(() => {
+    changeMenuButtonColor('white');
+  });
 
   const handlers = useSwipeable({
     onSwipedUp: _ => {

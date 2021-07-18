@@ -1,10 +1,12 @@
 .slide-up-enter {
   transform: translateY(100%);
 }
+
 .slide-up-enter-active {
   transform: translateY(0%);
   transition: transform 1500ms ease-in-out;
 }
+
 .slide-up-exit {
   transform: translateY(-100%);
 }
