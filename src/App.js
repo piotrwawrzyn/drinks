@@ -14,17 +14,18 @@ const App = ({ location, isLandscape }) => {
   if (!isMobile) return <ComeBackOnMobile />;
 
   return (
-    <TransitionGroup unmountOnExit>
-      <CSSTransition
-        key={location.key}
-        classNames="slide-up"
-        timeout={1500}
-        unmountOnExit
-      >
+    <TransitionGroup>
+      <CSSTransition key={location.key} classNames="slide-up" timeout={1500}>
         <Switch location={location}>
-          <Route key="home" path={`/`} exact component={HomeCard} />
+          <Route
+            key="home"
+            path={`/`}
+            exact
+            render={props => <HomeCard {...props} drinks={drinkData} />}
+          />
           {drinkData.map((drink, index) => (
             <Route
+              exact
               key={drink.name}
               path={`/${getUrlFriendlyString(drink.name)}`}
               render={props => (

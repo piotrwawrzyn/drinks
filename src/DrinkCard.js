@@ -27,7 +27,8 @@ const DrinkCard = ({ drink, neighbourDrinksNames }) => {
     },
 
     onSwipedDown: _ => {
-      swipeToAnotherDrink(neighbourDrinksNames.previous, history);
+      // TODO: Support going backwards as well
+      // swipeToAnotherDrink(neighbourDrinksNames.previous, history);
     },
     preventDefaultTouchmoveEvent: true,
     trackTouch: true,
