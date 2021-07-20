@@ -1,7 +1,5 @@
 .drink__card {
   height: 100vh;
-  overflow-x: hidden;
-  overflow-y: hidden;
 }
 
 .drink__card--image {
@@ -95,11 +93,12 @@
   border-radius: 50%;
   width: 2.8vh;
   height: 2.8vh;
-  padding: 4px;
+  padding: 6px;
   display: inline-block;
   background: #ffc83d;
   text-align: center;
   font: 2.8vh Arial, sans-serif;
+  text-align: center !important;
 }
 
 .drink__card--ratings-section .drink__card--ratings-section--max {

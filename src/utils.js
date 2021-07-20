@@ -50,3 +50,8 @@ export const changeMenuButtonColor = color => {
     bar.style.background = color;
   });
 };
+
+export const switchBodyScrolling = enable => {
+  if (enable) document.querySelector('body').classList.remove('lock-screen');
+  else document.querySelector('body').classList.add('lock-screen');
+};

@@ -18,49 +18,34 @@ const drinkData = [
     backgroundImage: './images/backgrounds/orange_house.jpg',
     ingredients: {
       alcoholic: ['Rye whiskey', 'Angostura bitters'],
-      other: ['Simple syrup', 'Luxardo cherry', 'Orange slice']
+      other: ['Simple syrup', 'Maraschino  cherry', 'Orange slice']
     },
     rating: 7,
     strength: 6
   },
   {
-    name: 'Sex on the beach',
-    image: './images/drinks/old_fashioned.jpg',
+    name: 'Sex On The Beach',
+    image: './images/drinks/sex_on_the_beach.jpg',
     backgroundImage: './images/backgrounds/beach_with_palm_trees.jpg',
     ingredients: {
       alcoholic: ['Vodka', 'Peach liqueur'],
       other: ['Cranberry juice', 'Orange juice']
     },
-    rating: 8,
+    rating: 7,
     strength: 7,
     funfact:
       'Name of this cocktail comes from two things people love to do in Florida'
   },
   {
-    name: 'Long Island Iced Tea',
-    image: './images/drinks/old_fashioned.jpg',
-    backgroundImage: './images/backgrounds/beach_with_palm_trees.jpg',
+    name: 'Whiskey Sour',
+    image: './images/drinks/whiskey_sour.jpg',
+    backgroundImage: './images/backgrounds/elegant_living_room.jpg',
     ingredients: {
-      alcoholic: ['Vodka', 'Peach liqueur'],
-      other: ['Cranberry juice', 'Orange juice']
+      alcoholic: ['Rye whiskey / bourbon'],
+      other: ['Fresh lemon juice', 'Simple syrup', 'Egg white']
     },
-    rating: 8,
-    strength: 7,
-    funfact:
-      'Name of this cocktail comes from two things people love to do in Florida'
-  },
-  {
-    name: 'Mojito',
-    image: './images/drinks/old_fashioned.jpg',
-    backgroundImage: './images/backgrounds/beach_with_palm_trees.jpg',
-    ingredients: {
-      alcoholic: ['Vodka', 'Peach liqueur'],
-      other: ['Cranberry juice', 'Orange juice']
-    },
-    rating: 8,
-    strength: 7,
-    funfact:
-      'Name of this cocktail comes from two things people love to do in Florida'
+    rating: 7,
+    strength: 10
   }
 ];
 

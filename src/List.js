@@ -1,11 +1,23 @@
 import { useEffect } from 'react';
+import { useHistory } from 'react-router';
 import './styles/List.css';
-import { changeMenuButtonColor } from './utils';
+import {
+  changeMenuButtonColor,
+  getUrlFriendlyString,
+  switchBodyScrolling
+} from './utils';
 
 const List = ({ elements, title }) => {
   useEffect(() => {
     changeMenuButtonColor('black');
+    switchBodyScrolling(true);
+
+    return () => {
+      switchBodyScrolling(false);
+    };
   }, []);
+
+  const history = useHistory();
 
   return (
     <div className="list-container">
@@ -14,7 +26,12 @@ const List = ({ elements, title }) => {
       </div>
       <div className="list">
         {elements.map(element => (
-          <div className="list--element">
+          <div
+            onClick={() =>
+              history.push('/' + getUrlFriendlyString(element.name))
+            }
+            className="list--element"
+          >
             <img src={element.image} alt={element.name} />
             <div className="list--element--caption">{element.name}</div>
           </div>

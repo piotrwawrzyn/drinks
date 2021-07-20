@@ -8,6 +8,12 @@ import {
 } from './utils';
 import { useEffect } from 'react';
 
+const getRateStyleForDigit = digit => {
+  const digitLength = digit.toString().length;
+
+  return digitLength > 1 ? { width: 'auto' } : {};
+};
+
 const DrinkCard = ({ drink, neighbourDrinksNames }) => {
   const {
     name,
@@ -42,7 +48,7 @@ const DrinkCard = ({ drink, neighbourDrinksNames }) => {
       adjustFontSizeToContainer(title, card, 0.9);
       changeMenuButtonColor('white');
     })();
-  }, []);
+  });
 
   return (
     <div className="drink__card" {...handlers}>
@@ -84,12 +90,22 @@ const DrinkCard = ({ drink, neighbourDrinksNames }) => {
       <div className="drink__card--ratings-section">
         <div>
           Strength{' '}
-          <div className="drink__card--ratings-section--rate">{strength}</div>
+          <div
+            style={getRateStyleForDigit(strength)}
+            className="drink__card--ratings-section--rate"
+          >
+            {strength}
+          </div>
           <div className="drink__card--ratings-section--max">/10</div>
         </div>
         <div>
           My Rating{' '}
-          <div className="drink__card--ratings-section--rate">{rating}</div>
+          <div
+            style={getRateStyleForDigit(rating)}
+            className="drink__card--ratings-section--rate"
+          >
+            {rating}
+          </div>
           <div className="drink__card--ratings-section--max">/10</div>
         </div>
       </div>
