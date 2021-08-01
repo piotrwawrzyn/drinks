@@ -58,7 +58,7 @@ const DrinkCard = ({ drink, neighbourDrinksNames }) => {
           className="drink__card--top-section-wrapper--background-image"
           style={{ backgroundImage: `url(${backgroundImage})` }}
         >
-          <img src={`${backgroundImage}`} />
+          <img src={`${backgroundImage}`} alt="background" />
         </div>
         <div className="drink__card--top-section">
           <div className="drink__card--image--container">
