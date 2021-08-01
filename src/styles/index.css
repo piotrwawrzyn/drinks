@@ -26,11 +26,6 @@ code {
     monospace;
 }
 
-/* html,
-body {
-
-} */
-
 p,
 h1,
 h2,
@@ -98,6 +93,7 @@ h3 {
   height: 35px !important;
   width: 35px !important;
   right: 5% !important;
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Color/shape of close button cross */
@@ -122,6 +118,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
   background: #373a47;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
+  overflow: hidden !important;
 }
 
 .bm-menu a,
@@ -142,7 +139,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
-  padding: 0.8em;
+  /* padding: 0.8em; */
   text-align: center;
 }
 
