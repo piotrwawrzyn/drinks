@@ -2,7 +2,7 @@ const drinkData = [
   {
     name: 'Old Fashioned',
     image: './images/drinks/old_fashioned.jpg',
-    backgroundImage: './images/backgrounds/whiskey_barrels.png',
+    backgroundImage: './images/backgrounds/vintage_bar.jpg',
     ingredients: {
       alcoholic: ['Rye whiskey', 'Angostura bitters', 'Orange bitters'],
       other: ['Brown sugar simple syrup', 'Giant ice cube']
@@ -44,8 +44,19 @@ const drinkData = [
       alcoholic: ['Rye whiskey / bourbon'],
       other: ['Fresh lemon juice', 'Simple syrup', 'Egg white']
     },
-    rating: 7,
-    strength: 10
+    rating: 6,
+    strength: 6
+  },
+  {
+    name: 'Mojito',
+    image: './images/drinks/mojito.jpg',
+    backgroundImage: './images/backgrounds/mint.jpg',
+    ingredients: {
+      alcoholic: ['Rum'],
+      other: ['Lime', 'Mint', 'Brown sugar', 'Soda water']
+    },
+    rating: 10,
+    strength: 6
   }
 ];
 

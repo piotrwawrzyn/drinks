@@ -52,14 +52,22 @@ const DrinkCard = ({ drink, neighbourDrinksNames }) => {
 
   return (
     <div className="drink__card" {...handlers}>
-      <div
-        className="drink__card--top-section"
-        style={{ backgroundImage: `url(${backgroundImage})` }}
-      >
-        <img className="drink__card--image" alt={name} src={image} />
-        <h2>{name}</h2>
-      </div>
+      <div className="drink__card--top-section-wrapper">
+        <div className="drink__card--top-section-wrapper--background-placeholder"></div>
+        <div
+          className="drink__card--top-section-wrapper--background-image"
+          style={{ backgroundImage: `url(${backgroundImage})` }}
+        >
+          <img src={`${backgroundImage}`} />
+        </div>
+        <div className="drink__card--top-section">
+          <div className="drink__card--image--container">
+            <img className="drink__card--image" alt={name} src={image} />
+          </div>
 
+          <h2>{name}</h2>
+        </div>
+      </div>
       <div className="drink__card--ingredients-section">
         <div className="drink__card--ingredients-section--alcohols">
           <h3>Alcohols</h3>
