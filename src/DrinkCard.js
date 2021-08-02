@@ -25,7 +25,6 @@ const DrinkCard = ({ drink, neighbourDrinksIds }) => {
     funfact
   } = drink;
   const history = useHistory();
-  console.log(neighbourDrinksIds);
 
   const handlers = useSwipeable({
     onSwipedUp: _ => {

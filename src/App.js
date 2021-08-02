@@ -48,7 +48,7 @@ const App = ({ location, isLandscape }) => {
                 <List
                   {...props}
                   elements={drinkData}
-                  title="DRINKS I CAN MIX"
+                  title="DRINKS COLLECTION"
                 />
               )}
             />
