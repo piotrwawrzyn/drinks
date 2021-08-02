@@ -9,6 +9,19 @@
   padding: 5%;
 }
 
+.list--element--image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 100%;
+  border-radius: 20px;
+  background-image: url('../images/drink_placeholder.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 55%;
+  background-color: #e3e3e3;
+}
+
 .list--element img {
   width: 100%;
   border-radius: 20px;

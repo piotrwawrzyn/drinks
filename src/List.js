@@ -32,7 +32,10 @@ const List = ({ elements, title }) => {
             }
             className="list--element"
           >
-            <img src={element.image} alt={element.name} />
+            <div class="list--element--image-wrapper">
+              <img src={element.image} alt={element.name} />
+            </div>
+
             <div className="list--element--caption">{element.name}</div>
           </div>
         ))}
