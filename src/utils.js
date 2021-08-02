@@ -1,27 +1,8 @@
-export const getUrlFriendlyString = string => {
-  const a =
-    'àáâäæãåāăąçćčđďèéêëēėęěğǵḧîïíīįìłḿñńǹňôöòóœøōõőṕŕřßśšşșťțûüùúūǘůűųẃẍÿýžźż·/_,:;';
-  const b =
-    'aaaaaaaaaacccddeeeeeeeegghiiiiiilmnnnnoooooooooprrsssssttuuuuuuuuuwxyyzzz------';
-  const p = new RegExp(a.split('').join('|'), 'g');
-
-  return string
-    .toString()
-    .toLowerCase()
-    .replace(/\s+/g, '-')
-    .replace(p, c => b.charAt(a.indexOf(c)))
-    .replace(/&/g, '-and-')
-    .replace(/[^\w\-]+/g, '')
-    .replace(/\-\-+/g, '-')
-    .replace(/^-+/, '')
-    .replace(/-+$/, '');
-};
-
 let lastSwipeTime = null;
 
-export const swipeToAnotherDrink = (name, history) => {
+export const swipeToAnotherDrink = (id, history) => {
   if (lastSwipeTime === null || new Date().getTime() - lastSwipeTime > 1500) {
-    history.push('/' + getUrlFriendlyString(name));
+    history.push('/' + id);
     lastSwipeTime = new Date().getTime();
   }
 };

@@ -14,7 +14,7 @@ const getRateStyleForDigit = digit => {
   return digitLength > 1 ? { width: 'auto' } : {};
 };
 
-const DrinkCard = ({ drink, neighbourDrinksNames }) => {
+const DrinkCard = ({ drink, neighbourDrinksIds }) => {
   const {
     name,
     image,
@@ -25,15 +25,15 @@ const DrinkCard = ({ drink, neighbourDrinksNames }) => {
     funfact
   } = drink;
   const history = useHistory();
+  console.log(neighbourDrinksIds);
 
   const handlers = useSwipeable({
     onSwipedUp: _ => {
-      swipeToAnotherDrink(neighbourDrinksNames.next, history);
+      swipeToAnotherDrink(neighbourDrinksIds.next, history);
     },
 
     onSwipedDown: _ => {
       // TODO: Support going backwards as well
-      // swipeToAnotherDrink(neighbourDrinksNames.previous, history);
     },
     preventDefaultTouchmoveEvent: true,
     trackTouch: true,

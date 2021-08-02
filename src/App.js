@@ -2,7 +2,6 @@ import './styles/App.css';
 import DrinkCard from './DrinkCard';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { Switch, Route, withRouter } from 'react-router';
-import { getUrlFriendlyString } from './utils';
 import { isMobile } from 'react-device-detect';
 import ComeBackOnMobile from './ComeBackOnMobile';
 import drinkData from './data';
@@ -62,18 +61,18 @@ const App = ({ location, isLandscape }) => {
             {drinkData.map((drink, index) => (
               <Route
                 key={drink.name}
-                path={`/${getUrlFriendlyString(drink.name)}`}
+                path={`/${drink.id}`}
                 render={props => (
                   <DrinkCard
                     {...props}
                     drink={drink}
-                    neighbourDrinksNames={{
+                    neighbourDrinksIds={{
                       previous: drinkData[index - 1]
-                        ? drinkData[index - 1].name
-                        : drinkData[drinkData.length - 1].name,
+                        ? drinkData[index - 1].id
+                        : drinkData[drinkData.length - 1].id,
                       next: drinkData[index + 1]
-                        ? drinkData[index + 1].name
-                        : drinkData[0].name
+                        ? drinkData[index + 1].id
+                        : drinkData[0].id
                     }}
                   ></DrinkCard>
                 )}

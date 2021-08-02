@@ -1,6 +1,5 @@
 import React from 'react';
 import { stack as StackMenu } from 'react-burger-menu';
-import { Link } from 'react-router-dom';
 import MyLink from './MyLink';
 
 class Menu extends React.Component {

@@ -1,6 +1,7 @@
 const drinkData = [
   {
     name: 'Old Fashioned',
+    id: 'old-fashioned',
     image: './images/drinks/old_fashioned.jpg',
     backgroundImage: './images/backgrounds/vintage_bar.jpg',
     ingredients: {
@@ -14,6 +15,7 @@ const drinkData = [
   },
   {
     name: 'Modern Old Fashioned',
+    id: 'modern-old-fashioned',
     image: './images/drinks/modern_old_fashioned.jpg',
     backgroundImage: './images/backgrounds/orange_house.jpg',
     ingredients: {
@@ -25,6 +27,7 @@ const drinkData = [
   },
   {
     name: 'Sex On The Beach',
+    id: 'sex-on-the-beach',
     image: './images/drinks/sex_on_the_beach.jpg',
     backgroundImage: './images/backgrounds/beach_with_palm_trees.jpg',
     ingredients: {
@@ -38,6 +41,7 @@ const drinkData = [
   },
   {
     name: 'Whiskey Sour',
+    id: 'whiskey-sour',
     image: './images/drinks/whiskey_sour.jpg',
     backgroundImage: './images/backgrounds/elegant_living_room.jpg',
     ingredients: {
@@ -49,6 +53,7 @@ const drinkData = [
   },
   {
     name: 'Mojito',
+    id: 'mojito',
     image: './images/drinks/mojito.jpg',
     backgroundImage: './images/backgrounds/mint.jpg',
     ingredients: {

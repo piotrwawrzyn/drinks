@@ -13,7 +13,7 @@ const HomeCard = ({ drinks }) => {
 
   const handlers = useSwipeable({
     onSwipedUp: _ => {
-      swipeToAnotherDrink(drinks[0].name, history);
+      swipeToAnotherDrink(drinks[0].id, history);
     },
 
     preventDefaultTouchmoveEvent: true,

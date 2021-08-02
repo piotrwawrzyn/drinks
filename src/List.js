@@ -1,11 +1,7 @@
 import { useEffect } from 'react';
 import { useHistory } from 'react-router';
 import './styles/List.css';
-import {
-  changeMenuButtonColor,
-  getUrlFriendlyString,
-  switchBodyScrolling
-} from './utils';
+import { changeMenuButtonColor, switchBodyScrolling } from './utils';
 
 const List = ({ elements, title }) => {
   useEffect(() => {
@@ -27,9 +23,7 @@ const List = ({ elements, title }) => {
       <div className="list">
         {elements.map(element => (
           <div
-            onClick={() =>
-              history.push('/' + getUrlFriendlyString(element.name))
-            }
+            onClick={() => history.push('/' + element.id)}
             className="list--element"
           >
             <div class="list--element--image-wrapper">
