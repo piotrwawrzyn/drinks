@@ -42,26 +42,57 @@ h3 {
   margin: 0;
 }
 
-.only-mobile-body {
-  background: black;
-  color: white;
-}
+/** WARNING CONTAINER **/
 
-.only-mobile-body div {
-  color: rgb(95, 91, 91);
-}
-
-.only-mobile-body span {
-  color: white;
-}
-
-.only-mobile-container {
+.warning-container {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  font-size: 50px;
+  text-align: center;
+  width: 80%;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.warning-container--exclamation-mark {
+  font-size: 60px;
+  width: 80px;
+  height: 80px;
+  line-height: 75px;
+  border: 4px solid #282828;
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 16px;
+}
+
+.warning-container--title {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.warning-container--description {
+  font-size: 14px;
+  margin-top: 16px;
+}
+
+@media screen and (orientation: portrait) {
+  .warning-container {
+    flex-direction: column;
+  }
+
+  .warning-container--exclamation-mark {
+    font-size: 60px;
+    width: 80px;
+    height: 80px;
+    line-height: 75px;
+    border: 4px solid #282828;
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 0px;
+    margin-bottom: 16px;
+  }
 }
 
 /** BURGER MENU HELPER CLASSES **/

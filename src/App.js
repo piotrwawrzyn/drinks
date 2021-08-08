@@ -3,7 +3,7 @@ import DrinkCard from './DrinkCard';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { Switch, Route, withRouter } from 'react-router';
 import { isMobile } from 'react-device-detect';
-import ComeBackOnMobile from './ComeBackOnMobile';
+import UnsupportedWarning from './UnsupportedWarning';
 import drinkData from './data';
 import { withOrientationChange } from 'react-device-detect';
 import HomeCard from './HomeCard';
@@ -13,8 +13,20 @@ import List from './List';
 const routesWithoutAnimation = ['/drinks-list'];
 
 const App = ({ location, isLandscape }) => {
-  if (isLandscape) return <div>Landscape mode is not currently supported</div>;
-  if (!isMobile) return <ComeBackOnMobile />;
+  if (isLandscape)
+    return (
+      <UnsupportedWarning
+        title="Landscape mode is currently not supported"
+        description="Please switch your device to portrait view in order to view the content"
+      />
+    );
+  if (!isMobile)
+    return (
+      <UnsupportedWarning
+        title="Currently only mobile devices are supported"
+        description="Please open this app on your smartphone in order to view the content"
+      />
+    );
 
   /* This is a nasty fix to exclude some routes from the animation */
   let CSSTransitionKey;
