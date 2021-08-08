@@ -1,6 +1,7 @@
 import React from 'react';
 import { stack as StackMenu } from 'react-burger-menu';
 import MyLink from './MyLink';
+import './styles/Menu.css';
 
 class Menu extends React.Component {
   constructor(props) {
